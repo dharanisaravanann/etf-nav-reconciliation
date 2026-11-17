@@ -1,5 +1,9 @@
 # ETF Holdings-to-NAV Reconciliation (IOZ)
 
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://etf-nav-reconciliation.streamlit.app)
+
+**Live dashboard:** [etf-nav-reconciliation.streamlit.app](https://etf-nav-reconciliation.streamlit.app)
+
 A data validation project that checks whether the published holdings of **IOZ** (iShares Core S&P/ASX 200 ETF, about AUD 9.5B) add up to its published NAV, and explains every difference it finds.
 
 ![Reconciliation dashboard](images/dashboard.png)
@@ -60,11 +64,13 @@ The holdings file is parsed automatically. The units on issue and published NAV 
 | File | Purpose |
 |---|---|
 | `etf_reconciliation.py` | Runs every check and prints the results |
-| `dashboard.py` | Streamlit dashboard: verdict, KPIs, each check step by step, and the root causes. You can upload a new holdings CSV and change the tolerance and published NAV |
+| `dashboard.py` | Streamlit dashboard: an overall verdict, four headline numbers, each check step by step, and what caused the differences. You can upload a new holdings CSV and change the tolerance and published NAV |
 | `IOZ_holdings.csv` | IOZ holdings as of 04 Sept 2026 |
-| `.streamlit/config.toml` | Dashboard theme |
+| `.streamlit/config.toml` | Dashboard theme (navy and teal) |
 
 ## How to run
+
+Or just open the [live dashboard](https://etf-nav-reconciliation.streamlit.app). To run it locally (tested on Python 3.14):
 
 ```bash
 python3 -m venv .venv
